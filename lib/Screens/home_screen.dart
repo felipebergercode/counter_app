@@ -43,6 +43,14 @@ class HomeScreen extends StatelessWidget {
               context.push('/settings');
             },
           ),
+          ListTile(
+            title: Text('Profile'),
+            subtitle: Text('Profile screen'),
+            trailing: Icon(Icons.arrow_forward_ios),
+            onTap: () {
+              context.push('/profile');
+            },
+          ),
         ],
       ),
     );

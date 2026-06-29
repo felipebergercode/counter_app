@@ -1,6 +1,7 @@
 import 'package:counter_app/styles/colors.dart';
 import 'package:counter_app/widgets/container_button.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -136,7 +137,12 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
             SizedBox(height: 40),
-            ContainerButton(text: 'Iniciar Sesion'),
+            GestureDetector(
+              onTap: () {
+                context.push('/name');
+              },
+              child: ContainerButton(text: 'Iniciar Sesion'),
+            ),
             SizedBox(height: 20),
             TextButton(
               onPressed: () {},

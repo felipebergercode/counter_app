@@ -1,6 +1,8 @@
+import 'package:counter_app/cubit/userName/user_name_cubit.dart';
 import 'package:counter_app/styles/colors.dart';
 import 'package:counter_app/widgets/container_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 class NameScreen extends StatefulWidget {
@@ -67,6 +69,9 @@ class _NameScreenState extends State<NameScreen> {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 10),
                   child: TextFormField(
+                    onChanged: (value) {
+                      context.read<UserNameCubit>().saveName(value);
+                    },
                     controller: _nameController,
                     validator: (value) {
                       if (value == null || value.isEmpty) {

@@ -100,7 +100,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             SizedBox(height: 20),
             Padding(
-              padding: const EdgeInsets.only(right: 300),
+              padding: const EdgeInsets.only(right: 290),
               child: Text(
                 'Contraseña',
 

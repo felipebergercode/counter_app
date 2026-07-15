@@ -4,6 +4,7 @@ import 'package:counter_app/styles/colors.dart';
 import 'package:counter_app/widgets/ingresos_perdidas_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,10 +14,64 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int _selectedIndex = 0;
+
+  static const _routes = [
+    null,
+    '/transactions',
+    '/add-expense',
+    '/stats',
+    '/profile',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: appColors.backgroundColor,
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        onTap: (index) {
+          final route = _routes[index];
+          if (route != null)
+            context.push(route);
+          else
+            setState(() => _selectedIndex = index);
+        },
+        selectedItemColor: appColors.primaryColor,
+        unselectedItemColor: const Color(0xFF9E9E9E),
+        type: BottomNavigationBarType.fixed,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home_outlined),
+            activeIcon: Icon(Icons.home),
+            label: 'Inicio',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.swap_horiz_outlined),
+            activeIcon: Icon(Icons.swap_horiz),
+            label: 'Transacciones',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.add_circle_outline,
+              size: 35,
+              color: appColors.primaryColor,
+            ),
+            activeIcon: Icon(Icons.add_circle, size: 30),
+            label: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.bar_chart_outlined),
+            activeIcon: Icon(Icons.bar_chart),
+            label: 'Estadísticas',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_outline),
+            activeIcon: Icon(Icons.person),
+            label: 'Perfil',
+          ),
+        ],
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 90, right: 20, left: 20),
         child: Column(
@@ -116,19 +171,37 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             SizedBox(height: 20),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 IngresosPerdidasContainer(
                   text: 'Ingresos',
                   color: const Color(0xFF65C468),
-                  text2: '\$50.000',
+                  text2: '\$0',
                   color2: const Color(0xFF1C8C20),
                 ),
                 IngresosPerdidasContainer(
                   text: 'Gastos',
                   color: const Color.fromARGB(255, 181, 105, 105),
-                  text2: '\$15.000',
+                  text2: '\$0',
                   color2: Colors.red,
+                ),
+              ],
+            ),
+            SizedBox(height: 15),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Gastos del mes',
+                  style: TextStyle(fontSize: 17, fontWeight: FontWeight.w700),
+                ),
+                Text(
+                  'Junio 2026',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 14,
+                    color: Colors.black.withOpacity(0.7),
+                  ),
                 ),
               ],
             ),

@@ -18,7 +18,7 @@ class IngresosPerdidasContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 120,
-      width: 180,
+      width: 190,
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(

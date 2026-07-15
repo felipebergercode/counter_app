@@ -36,24 +36,15 @@ class _LoginScreenState extends State<LoginScreen> {
             SizedBox(height: 20),
             RichText(
               text: TextSpan(
-                style: const TextStyle(
-                  fontFamily: 'Inter',
-                  fontSize: 32,
-                  color: Colors.black,
-                ),
+                style: const TextStyle(fontSize: 32, color: Colors.black),
                 children: [
                   TextSpan(
                     text: 'Money',
-                    style: TextStyle(
-                      fontFamily: 'Inter',
-                      fontSize: 32,
-                      fontWeight: FontWeight.w700,
-                    ),
+                    style: TextStyle(fontSize: 32, fontWeight: FontWeight.w700),
                   ),
                   TextSpan(
                     text: 'Flow',
                     style: TextStyle(
-                      fontFamily: 'Inter',
                       fontSize: 32,
                       fontWeight: FontWeight.w700,
                       color: appColors.primaryColor,
@@ -71,11 +62,7 @@ class _LoginScreenState extends State<LoginScreen> {
             SizedBox(height: 40),
             Padding(
               padding: const EdgeInsets.only(right: 350),
-              child: Text(
-                'Email',
-
-                style: TextStyle(fontFamily: 'Inter', fontSize: 18),
-              ),
+              child: Text('Email', style: TextStyle(fontSize: 18)),
             ),
             SizedBox(height: 5),
             Container(
@@ -101,11 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
             SizedBox(height: 20),
             Padding(
               padding: const EdgeInsets.only(right: 290),
-              child: Text(
-                'Contraseña',
-
-                style: TextStyle(fontFamily: 'Inter', fontSize: 18),
-              ),
+              child: Text('Contraseña', style: TextStyle(fontSize: 18)),
             ),
             SizedBox(height: 5),
             Container(

@@ -49,7 +49,7 @@ class _NameScreenState extends State<NameScreen> {
                 'Antes de empezar necesitamos saber tu nombre',
                 style: TextStyle(
                   height: 1.1,
-                  fontFamily: 'Inter',
+
                   fontSize: 40,
                   fontWeight: FontWeight.w700,
                   color: appColors.primaryColor,

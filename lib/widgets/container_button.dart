@@ -8,7 +8,7 @@ class ContainerButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 55,
+      height: 50,
       width: double.infinity,
       decoration: BoxDecoration(
         color: appColors.primaryColor,
@@ -19,7 +19,6 @@ class ContainerButton extends StatelessWidget {
           text,
           style: TextStyle(
             color: Colors.white,
-            fontFamily: 'Inter',
             fontSize: 20,
             fontWeight: FontWeight.w700,
           ),
